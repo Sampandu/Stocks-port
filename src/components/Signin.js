@@ -6,11 +6,11 @@ const Signin = () => {
       <main className="pa4 black-80 center">
         <div className="measure">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f2 fw6 ph0 mh0">Sign In</legend>
+            <legend className="f2 fw6 ph0 mh0 center">Sign In</legend>
             <div className="mt3">
               <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="email"
                 name="email"
                 id="email-address"
@@ -19,15 +19,15 @@ const Signin = () => {
             <div className="mv3">
               <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
               <input
-                className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                className="b br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                 type="password"
                 name="password"
                 id="password"
               />
             </div>
           </fieldset>
-          <div className="">
-            <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+          <div>
+            <input className="b br3 ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib center"
               type="submit"
               value="Sign in"
             />
