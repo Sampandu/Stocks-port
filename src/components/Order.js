@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Buyshare = () => {
+const Order = () => {
   return (
-    <article className="br2 ba br3 shadow-5 b--black-10 mv4 w-100 w-50-m w-25-l mw5 center">
+    <article className="center pa3 pa5-ns">
         <main className="pa4 black-80 center">
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
@@ -38,4 +38,4 @@ const Buyshare = () => {
   )
 }
 
-export default Buyshare
+export default Order
