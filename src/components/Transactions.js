@@ -19,19 +19,27 @@ class Transactions extends Component {
   }
 
   render() {
-    const { transaction } = this.state
+    const transaction = this.state.transaction || []
 
     return (
       <div>
         <article className="center pa3 pa5-ns">
-          <h1 className='tc'>Transactions</h1>
-          <ul className="list pl0 ml0 center mw6 ba b--light-silver br2">
-            {
-              transaction.map(trx => (
-                <li key={trx.id} className="ph3 pv3 bb b--light-silver">{`Buy (${trx.ticker}) - ${trx.quantity} Shares @ ${trx.price} `}</li>
-              ))
-            }
-          </ul>
+        {
+          transaction.length === 0
+          ? <h1>{`Your transaction history is empty`}</h1>
+          : (
+              <div>
+                <h1 className='tc'>Transactions</h1>
+                <ul className="list pl0 ml0 center mw6 ba b--light-silver br2">
+                  {
+                    transaction.map(trx => (
+                      <li key={trx.id} className="ph3 pv3 bb b--light-silver">{`Buy (${trx.ticker}) - ${trx.quantity} Shares @ ${trx.price} `}</li>
+                    ))
+                  }
+                </ul>
+              </div>
+            )
+        }
         </article>
       </div>
     )
