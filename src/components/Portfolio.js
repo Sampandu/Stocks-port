@@ -3,8 +3,8 @@ import Order from './Order';
 
 const Portfolio = () => {
   return (
-    <article class="cf">
-      <div class="fl w-60 tc">
+    <article className="cf">
+      <div className="fl w-60 tc">
         <article className="center pa3 pa5-ns">
           <h1 className='tc'>Portfolio ($5000.00)</h1>
           <ul className="list pl0 ml0 center mw6 ba b--light-silver br2">
@@ -18,7 +18,7 @@ const Portfolio = () => {
           </ul>
         </article>
       </div>
-      <div class="fl w-40 tc">
+      <div className="fl w-40 tc">
         <Order />
       </div>
     </article>

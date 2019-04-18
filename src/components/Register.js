@@ -22,7 +22,6 @@ class Register extends Component {
       password: this.state.password
     })
       .then(response => {
-        console.log('register', response.data)
         if(response.data.id) {
           this.props.loadUser(response.data)
           this.props.history.push('/portfolio')

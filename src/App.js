@@ -26,9 +26,9 @@ class App extends Component {
 
   loadUser = (data) => {
     this.setState({
-      user: {...this.state.user, data}
+      isSignin: !this.state.isSignin,
+      user: {...this.state.user, ...data}
     })
-    console.log('app.js----',this.state.user)
   }
 
   render() {
@@ -36,12 +36,13 @@ class App extends Component {
 
     return (
       <div>
-        <Navigation />
+        <Navigation isSignin={this.state.isSignin} />
         <Switch>
           <Route exact path="/" render={(props) => <Signin {...props} loadUser={this.loadUser} />}/>
           <Route path="/register" render={(props) => <Register {...props} loadUser={this.loadUser} />}/>
           <Route path="/portfolio" component={Portfolio}/>
-          <Route path="/transactions" component={Transactions}/>
+          <Route path="/transactions" render={(props) => <Transactions {...props} user={this.state.user} />}/>
+
           {/* Routes placed here are only available after logging in */}
           {isSignin &&
             <Redirect to="/portfolio"/>
