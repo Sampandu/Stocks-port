@@ -39,7 +39,7 @@ class App extends Component {
         <Navigation />
         <Switch>
           <Route exact path="/" render={(props) => <Signin {...props} loadUser={this.loadUser} />}/>
-          <Route path="/register" component={Register}/>
+          <Route path="/register" render={(props) => <Register {...props} loadUser={this.loadUser} />}/>
           <Route path="/portfolio" component={Portfolio}/>
           <Route path="/transactions" component={Transactions}/>
           {/* Routes placed here are only available after logging in */}

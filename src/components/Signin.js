@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-// import history from '../history';
 
 class Signin extends Component {
   constructor(props) {
@@ -22,7 +21,6 @@ class Signin extends Component {
       password: this.state.password
     })
       .then(response => {
-        console.log('signin', response.data)
         if(response.data.id) {
           this.props.loadUser(response.data)
           this.props.history.push('/portfolio')
