@@ -41,7 +41,7 @@ class App extends Component {
           <Route exact path="/" render={(props) => <Signin {...props} loadUser={this.loadUser} />}/>
           <Route path="/register" render={(props) => <Register {...props} loadUser={this.loadUser} />}/>
           <Route path="/portfolio" component={Portfolio}/>
-          <Route path="/transactions" render={(props) => <Transactions {...props} user={this.state.user} />}/>
+          <Route path="/transactions" render={(props) => <Transactions {...props} name={this.state.user.name} />}/>
 
           {/* Routes placed here are only available after logging in */}
           {isSignin &&

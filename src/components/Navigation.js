@@ -8,7 +8,7 @@ const Navigation = ({isSignin}) => {
         <Link to="/portfolio">
           <p className='f3 pa3 link underline black dim pointer'>Portfolio</p>
         </Link>
-        <Link to="/portfolio">
+        <Link to="/transactions">
           <p className='f3 pa3 link underline black dim pointer'>Transaction</p>
         </Link>
       </nav>
