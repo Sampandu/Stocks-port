@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Order from './Order';
 import io from 'socket.io-client';
+import totalValue from '../util'
+
 const url = 'https://ws-api.iextrading.com/1.0/last'
-
-
+const socket = io(url)
 
 class Portfolio extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      portfolio: []
+      portfolio: [],
+      tickerList:''
     }
   }
 
@@ -20,13 +22,15 @@ class Portfolio extends Component {
     axios.get('http://localhost:3001/portfolio', { params: {name} })
         .then(response => this.setState({portfolio: response.data}))
         .then(() => {
-          tickerList = this.state.portfolio.map(e => e.ticker)
-                                        .join(',')
-                                        .toLowerCase()
-          //fetch open price of each stock
-          return axios.get(`https://api.iextrading.com/1.0/stock/market/batch?symbols=${tickerList}&types=quote`)
+          tickerList = this.state.portfolio.map(e => e.ticker).join(',').toLowerCase()
+          return this.setState({tickerList: tickerList})
         })
+        .then(() =>
+          //fetch open price of each stock from IEX
+          axios.get(`https://api.iextrading.com/1.0/stock/market/batch?symbols=${tickerList}&types=quote`)
+        )
         .then(response => {
+          //add open price of each stock into portfolio
           const openPriceTickers = Object.keys(response.data)
           const portfolio = this.state.portfolio
           for(let i = 0; i < portfolio.length; i++) {
@@ -37,10 +41,10 @@ class Portfolio extends Component {
           return this.setState({portfolio: portfolio})
         })
         .then(() => {
-          const socket = io(url)
           //connect to the IEX channel
           socket.emit('subscribe', tickerList)
           //Listen to the IEX channel's messages
+          //add last price of each stock into portfolio
           socket.on('message', message => {
             const data = JSON.parse(message)
             const portfolio = this.state.portfolio
@@ -55,10 +59,15 @@ class Portfolio extends Component {
         .catch(err => console.log(err))
   }
 
+  componentWillUnmount() {
+    const tickers = this.state.tickerList
+    socket.emit('unsubscribe', tickers)
+    socket.on('disconnect', () => console.log('Disconnected.'))
+  }
+
   render() {
     const portfolio = this.state.portfolio || []
-    // let price = this.state.price || []
-    console.log('last price', portfolio)
+    const value = totalValue(portfolio) || ''
 
     return (
       <article className="cf">
@@ -69,7 +78,7 @@ class Portfolio extends Component {
             ? <h1>{`Your portfolio is empty`}</h1>
             : (
                 <div>
-                  <h1 className='tc'>Portfolio ($5000.00)</h1>
+                  <h1 className='tc'>{`Portfolio ($ ${value})`}</h1>
                   <ul className="list pl0 ml0 center mw6 ba b--light-silver br2">
                     {
                         portfolio.map(trx => (
