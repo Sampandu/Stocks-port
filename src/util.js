@@ -1,9 +1,16 @@
-const totalValue = (arr) => {
-  var result = 0
-  for(let i = 0; i < arr.length; i++) {
-    result += arr[i].quantity * arr[i].last
+const totalValue = arr => {
+  var result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    result += arr[i].quantity * arr[i].last;
   }
-  return result
-}
+  return result;
+};
 
-export default totalValue
+const currencyNumberFormat = num => {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(num);
+};
+
+export { totalValue, currencyNumberFormat };
