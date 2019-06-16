@@ -14,44 +14,59 @@ const initialState = {
     id: '',
     name: '',
     email: '',
-    join: ''
-  }
-}
+    join: '',
+  },
+};
 
 class App extends Component {
   constructor() {
-    super()
-    this.state = initialState
+    super();
+    this.state = initialState;
   }
 
-  loadUser = (data) => {
+  loadUser = data => {
     this.setState({
       isSignin: !this.state.isSignin,
-      user: {...this.state.user, ...data}
-    })
-  }
+      user: { ...this.state.user, ...data },
+    });
+  };
 
   render() {
-    const { isSignin } = this.state
+    const { isSignin } = this.state;
 
     return (
       <div>
         <Navigation isSignin={this.state.isSignin} />
         <Switch>
-          <Route exact path="/" render={(props) => <Signin {...props} loadUser={this.loadUser} />}/>
-          <Route path="/register" render={(props) => <Register {...props} loadUser={this.loadUser} />}/>
-          <Route path="/portfolio" render={(props) => <Portfolio {...props} name={this.state.user.name} />}/>
-          <Route path="/transactions" render={(props) => <Transactions {...props} name={this.state.user.name} />}/>
+          <Route
+            exact
+            path="/"
+            render={props => <Signin {...props} loadUser={this.loadUser} />}
+          />
+          <Route
+            path="/register"
+            render={props => <Register {...props} loadUser={this.loadUser} />}
+          />
+          <Route
+            path="/portfolio"
+            render={props => (
+              <Portfolio {...props} name={this.state.user.name} />
+            )}
+          />
+          <Route
+            path="/transactions"
+            render={props => (
+              <Transactions {...props} name={this.state.user.name} />
+            )}
+          />
 
           {/* Routes placed here are only available after logging in */}
-          {isSignin &&
-            <Redirect to="/portfolio"/>
-          }
+          {isSignin && <Redirect to="/portfolio" />}
           {/* Displays our Login component as a fallback */}
-          <Route component={Signin}/>
+          <Route component={Signin} />
         </Switch>
       </div>
-    )
+    );
   }
 }
 
