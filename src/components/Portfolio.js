@@ -17,13 +17,14 @@ class Portfolio extends Component {
       .get(`http://localhost:3001/portfolio?name=${name}`)
       .then(response => response.data)
       .then(data => {
-        if (data.length > 0) this.setState({ portfolio: data });
+        data.length > 0 && this.setState({ portfolio: data });
       })
       .catch(err => console.log(err));
   }
 
   render() {
     const portfolio = this.state.portfolio || [];
+    const name = this.props.name;
 
     return (
       <div>
@@ -38,12 +39,9 @@ class Portfolio extends Component {
             </article>
           </div>
           <div className="fl w-40 tc">
-            <Order />
+            <Order name={name} />
           </div>
         </article>
-        <footer>
-          <a href="https://iexcloud.io">Data provided by IEX Cloud</a>
-        </footer>
       </div>
     );
   }
