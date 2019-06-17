@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import FormValidationError from './FormValidationError';
+import FormValidation from './FormValidation';
 
 class Order extends Component {
   state = {
     ticker: '',
-    quantity: 0,
+    quantity: '',
+    id: '',
     tickersList: [],
   };
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
-    console.log('++++', this.state.ticker);
-    console.log('---', this.state.tickersList.includes(this.state.ticker));
   };
 
   onOrderSubmit = () => {
@@ -23,7 +22,13 @@ class Order extends Component {
         quantity: Number(this.state.quantity),
       })
       .then(response => response.data)
-      .then(result => console.log('-----', result))
+      .then(result => {
+        result.id && this.setState({ id: result.id });
+        this.setState({
+          ticker: '',
+          quantity: '',
+        });
+      })
       .catch(err => console.log(err));
   };
 
@@ -37,7 +42,8 @@ class Order extends Component {
 
   render() {
     const ticker = this.state.ticker;
-    const quantity = Number(this.state.quantity);
+    const quantity = this.state.quantity;
+    const id = this.state.id;
     const tickersList = this.state.tickersList;
 
     return (
@@ -57,6 +63,7 @@ class Order extends Component {
                     placeholder="ticker"
                     name="ticker"
                     id="ticker"
+                    value={ticker}
                   />
                 </div>
                 <div className="mt3">
@@ -67,6 +74,7 @@ class Order extends Component {
                     placeholder="Qty"
                     name="quantity"
                     id="email-address"
+                    value={quantity}
                   />
                 </div>
               </fieldset>
@@ -78,14 +86,15 @@ class Order extends Component {
                   value="Buy"
                 />
               </div>
+              <FormValidation
+                ticker={ticker}
+                quantity={quantity}
+                id={id}
+                tickersList={tickersList}
+              />
             </div>
           </main>
         </article>
-        <FormValidationError
-          ticker={ticker}
-          quantity={quantity}
-          tickersList={tickersList}
-        />
       </div>
     );
   }

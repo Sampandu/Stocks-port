@@ -13,6 +13,14 @@ class Portfolio extends Component {
 
   componentDidMount() {
     const name = this.props.name;
+    this.updateFrequence = setInterval(() => this.fetchedPofolio(name), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.updateFrequence);
+  }
+
+  fetchedPofolio(name) {
     axios
       .get(`http://localhost:3001/portfolio?name=${name}`)
       .then(response => response.data)
