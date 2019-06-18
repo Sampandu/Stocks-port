@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Portfolio from './components/Portfolio';
 import Transactions from './components/Transactions';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 import './App.css';
 import 'tachyons';
 
@@ -24,6 +25,10 @@ class App extends Component {
     this.state = initialState;
   }
 
+  handleSignout = () => {
+    this.setState(initialState);
+  };
+
   loadUser = data => {
     this.setState({
       isSignin: !this.state.isSignin,
@@ -36,7 +41,10 @@ class App extends Component {
 
     return (
       <div>
-        <Navigation isSignin={this.state.isSignin} />
+        <Navigation
+          isSignin={this.state.isSignin}
+          handleSignout={this.handleSignout}
+        />
         <Switch>
           <Route
             exact
@@ -61,21 +69,11 @@ class App extends Component {
           />
 
           {/* Routes placed here are only available after logging in */}
-          {isSignin && <Redirect to="/portfolio" />}
+          {isSignin ? <Redirect to="/portfolio" /> : <Redirect to="/" />}
           {/* Displays our Login component as a fallback */}
           <Route component={Signin} />
         </Switch>
-        <footer className="fixed left-0 bottom-0 w-100 h2 bg-near-black white-80 ph4">
-          <p className="f6">
-            <span className="dib mr4 mr5-ns">©2019 Developed by Zhenyu</span>
-            <a
-              className="link white-80 hover-light-purple"
-              href="https://iexcloud.io"
-            >
-              Data provided by IEX Cloud
-            </a>
-          </p>
-        </footer>
+        <Footer />
       </div>
     );
   }

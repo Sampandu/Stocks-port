@@ -24,10 +24,16 @@ class Order extends Component {
       .then(response => response.data)
       .then(result => {
         result.id && this.setState({ id: result.id });
-        this.setState({
-          ticker: '',
-          quantity: '',
-        });
+        this.setState({ ticker: '', quantity: '' });
+      })
+      .then(() => {
+        setTimeout(
+          () =>
+            this.setState({
+              id: '',
+            }),
+          2000
+        );
       })
       .catch(err => console.log(err));
   };

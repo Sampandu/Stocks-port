@@ -13,6 +13,7 @@ class Portfolio extends Component {
 
   componentDidMount() {
     const name = this.props.name;
+    console.log('--------++++', name);
     this.updateFrequence = setInterval(() => this.fetchedPofolio(name), 1000);
   }
 
