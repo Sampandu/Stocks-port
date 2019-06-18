@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import FormValidation from './FormValidation';
+import { currencyNumberFormat } from '../util';
 
 class Order extends Component {
   state = {
     ticker: '',
     quantity: '',
-    id: '',
+    isOrdered: false,
+    notEnoughCash: false,
+    balance: 0,
     tickersList: [],
   };
 
@@ -23,14 +26,17 @@ class Order extends Component {
       })
       .then(response => response.data)
       .then(result => {
-        result.id && this.setState({ id: result.id });
+        result === 'not enough cash' && this.setState({ notEnoughCash: true });
+        result.id &&
+          this.setState({ isOrdered: true, balance: result.balance });
         this.setState({ ticker: '', quantity: '' });
       })
       .then(() => {
         setTimeout(
           () =>
             this.setState({
-              id: '',
+              notEnoughCash: false,
+              isOrdered: false,
             }),
           2000
         );
@@ -39,18 +45,23 @@ class Order extends Component {
   };
 
   componentDidMount() {
+    const balance = this.props.balance;
     axios
       .get('http://localhost:3001/tickersList')
       .then(response => response.data)
-      .then(tickersList => this.setState({ tickersList }))
+      .then(tickersList => this.setState({ tickersList, balance }))
       .catch(err => console.log(err));
   }
 
   render() {
-    const ticker = this.state.ticker;
-    const quantity = this.state.quantity;
-    const id = this.state.id;
-    const tickersList = this.state.tickersList;
+    const {
+      ticker,
+      quantity,
+      isOrdered,
+      notEnoughCash,
+      balance,
+      tickersList,
+    } = this.state;
 
     return (
       <div>
@@ -59,7 +70,7 @@ class Order extends Component {
             <div className="measure">
               <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                 <legend className="f3 fw6 ph0 mh0 center">
-                  Cash - $5000.00
+                  {`Cash - ${currencyNumberFormat(balance)}`}
                 </legend>
                 <div className="mt3">
                   <input
@@ -95,7 +106,9 @@ class Order extends Component {
               <FormValidation
                 ticker={ticker}
                 quantity={quantity}
-                id={id}
+                isOrdered={isOrdered}
+                notEnoughCash={notEnoughCash}
+                // id={id}
                 tickersList={tickersList}
               />
             </div>

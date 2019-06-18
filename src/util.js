@@ -10,7 +10,7 @@ const currencyNumberFormat = num => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
-  }).format(num);
+  }).format(Number(num));
 };
 
 export { totalValue, currencyNumberFormat };

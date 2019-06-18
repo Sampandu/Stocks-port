@@ -15,6 +15,7 @@ const initialState = {
     id: '',
     name: '',
     email: '',
+    balance: 0,
     join: '',
   },
 };
@@ -37,7 +38,7 @@ class App extends Component {
   };
 
   render() {
-    const { isSignin } = this.state;
+    const { isSignin, user } = this.state;
 
     return (
       <div>
@@ -58,18 +59,16 @@ class App extends Component {
           <Route
             path="/portfolio"
             render={props => (
-              <Portfolio {...props} name={this.state.user.name} />
+              <Portfolio {...props} name={user.name} balance={user.balance} />
             )}
           />
           <Route
             path="/transactions"
-            render={props => (
-              <Transactions {...props} name={this.state.user.name} />
-            )}
+            render={props => <Transactions {...props} name={user.name} />}
           />
 
           {/* Routes placed here are only available after logging in */}
-          {isSignin ? <Redirect to="/portfolio" /> : <Redirect to="/" />}
+          {isSignin && <Redirect to="/portfolio" />}
           {/* Displays our Login component as a fallback */}
           <Route component={Signin} />
         </Switch>
