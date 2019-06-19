@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Order from './Order';
 import Stocklist from './Stocklist';
 import Loading from './Loading';
+import ErrorBoundry from './ErrorBoundry';
 import { Dimmer, Segment } from 'semantic-ui-react';
 import axios from 'axios';
 
@@ -42,7 +43,9 @@ export default class Portfolio extends Component {
 
         <article className="cf">
           <div className="fl w-60 tc">
-            <Stocklist name={name} portfolio={portfolio} />
+            <ErrorBoundry>
+              <Stocklist name={name} portfolio={portfolio} />
+            </ErrorBoundry>
           </div>
           <div className="fl w-40 tc">
             <Order name={name} balance={balance} />
