@@ -1,74 +1,42 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { totalValue, currencyNumberFormat } from '../util';
+import React from 'react';
+import { totalValue, currencyNumberFormat, colorIndicator } from '../util';
 
-function colorIndicator(latest, open) {
-  if (latest === open) {
-    return 'grey';
-  } else if (latest > open) {
-    return 'green';
-  } else {
-    return 'red';
-  }
-}
-
-export default class Stocklist extends Component {
-  state = {
-    portfolio: [],
-  };
-
-  componentDidMount() {
-    const name = this.props.name;
-    this.updateFrequence = setInterval(() => this.fetchedPofolio(name), 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.updateFrequence);
-  }
-
-  fetchedPofolio(name) {
-    axios
-      .get(`http://localhost:3001/portfolio?name=${name}`)
-      .then(response => response.data)
-      .then(data => {
-        data.length > 0 && this.setState({ portfolio: data });
-      })
-      .catch(err => console.log(err));
-  }
-
-  render() {
-    const portfolio = this.state.portfolio;
-    const name = this.props.name;
-    return (
-      <article className="center pa3 pa5-ns">
-        <h1>{`Welcome ${name}`}</h1>
-        {!portfolio.length ? (
-          <h1>{`Your portfolio is empty`}</h1>
-        ) : (
-          <div>
-            <h1 className="tc">{`Portfolio (${currencyNumberFormat(
-              totalValue(portfolio)
-            )})`}</h1>
-            <ul className="list pl0 ml0 center mw6 ba b--light-silver br2">
-              {portfolio.map(trx => {
-                const fontColor = colorIndicator(trx.latest, trx.open);
-                return (
-                  <li key={trx.id} className="ph3 pv3 bb b--light-silver">
-                    <strong style={{ color: fontColor }}>{trx.ticker}</strong>
-                    {` - ${trx.quantity} Shares - Current Values: ${
-                      trx.latest
-                        ? currencyNumberFormat(
-                            trx.latest * Number(trx.quantity)
-                          )
-                        : ''
-                    }`}
-                  </li>
-                );
-              })}
+export default function Stocklist({ name, portfolio }) {
+  return (
+    <article className="center pa3 pa5-ns">
+      <h1>{`Welcome ${name}`}</h1>
+      {!portfolio.length ? (
+        <h1>{`Your portfolio is empty`}</h1>
+      ) : (
+        <div>
+          <h1 className="tc">{`Portfolio (${currencyNumberFormat(
+            totalValue(portfolio)
+          )})`}</h1>
+          <div className="pa1 pa2-ns">
+            <ul className="list pl0 measure center">
+              {portfolio.map(trx => (
+                <li
+                  key={trx.id}
+                  className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30"
+                >
+                  <strong
+                    style={{
+                      color: colorIndicator(trx.latest, trx.open),
+                    }}
+                  >
+                    {trx.ticker}
+                  </strong>
+                  {` @ ${trx.quantity} Shares       Values: ${
+                    trx.latest
+                      ? currencyNumberFormat(trx.latest * Number(trx.quantity))
+                      : ''
+                  }`}
+                </li>
+              ))}
             </ul>
           </div>
-        )}
-      </article>
-    );
-  }
+        </div>
+      )}
+    </article>
+  );
 }

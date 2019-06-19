@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Loading from './Loading';
+import { Dimmer, Segment } from 'semantic-ui-react';
 import axios from 'axios';
 
 class Transactions extends Component {
@@ -6,25 +8,32 @@ class Transactions extends Component {
     super(props);
     this.state = {
       transaction: [],
+      isPending: false,
     };
   }
 
   componentDidMount() {
     const name = this.props.name;
+    this.setState({ isPending: true });
     axios
       .get(`http://localhost:3001/transaction?name=${name}`)
-      .then(response => this.setState({ transaction: response.data }))
+      .then(response =>
+        this.setState({ transaction: response.data, isPending: false })
+      )
       .catch(err => console.log(err));
   }
 
   render() {
     const transaction = this.state.transaction || [];
+    const isPending = this.state.isPending;
 
     return (
-      <div>
+      <Dimmer.Dimmable as={Segment} dimmed={isPending}>
+        <Loading isPending={isPending} />
+
         <article className="center pa3 pa5-ns">
           {transaction.length === 0 ? (
-            <h1>{`Your transaction history is empty`}</h1>
+            <h1 className="tc">{`Your transaction history is empty`}</h1>
           ) : (
             <div>
               <h1 className="tc">Transactions</h1>
@@ -41,7 +50,7 @@ class Transactions extends Component {
             </div>
           )}
         </article>
-      </div>
+      </Dimmer.Dimmable>
     );
   }
 }

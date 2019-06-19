@@ -6,6 +6,7 @@ import Portfolio from './components/Portfolio';
 import Transactions from './components/Transactions';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+
 import './App.css';
 import 'tachyons';
 

@@ -13,4 +13,14 @@ const currencyNumberFormat = num => {
   }).format(Number(num));
 };
 
-export { totalValue, currencyNumberFormat };
+const colorIndicator = (latest, open) => {
+  if (latest === open) {
+    return 'grey';
+  } else if (latest > open) {
+    return 'green';
+  } else {
+    return 'red';
+  }
+};
+
+export { totalValue, currencyNumberFormat, colorIndicator };
