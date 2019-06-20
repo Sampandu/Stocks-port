@@ -64,57 +64,53 @@ class Order extends Component {
     } = this.state;
 
     return (
-      <div>
-        <article className="center pa3 pa5-ns">
-          <main className="pa4 black-80 center">
-            <div className="measure">
-              <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                <legend className="f3 fw6 ph0 mh0 center">
-                  {`Cash - ${currencyNumberFormat(balance)}`}
-                </legend>
-                <div className="mt3">
-                  <input
-                    onChange={this.handleChange}
-                    className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                    type="text"
-                    placeholder="ticker"
-                    name="ticker"
-                    id="ticker"
-                    value={ticker}
-                  />
-                </div>
-                <div className="mt3">
-                  <input
-                    onChange={this.handleChange}
-                    className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                    type="quantity"
-                    placeholder="Qty"
-                    name="quantity"
-                    id="email-address"
-                    value={quantity}
-                  />
-                </div>
-              </fieldset>
-              <div className="">
-                <input
-                  className="b br3 ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib center"
-                  type="submit"
-                  onClick={this.onOrderSubmit}
-                  value="Buy"
-                />
-              </div>
-              <FormValidation
-                ticker={ticker}
-                quantity={quantity}
-                isOrdered={isOrdered}
-                notEnoughCash={notEnoughCash}
-                // id={id}
-                tickersList={tickersList}
+      <main className="pa4 black-80 center">
+        <div className="measure">
+          <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
+            <legend className="f3 fw6 ph0 mh0 center">
+              {`Cash - ${currencyNumberFormat(balance)}`}
+            </legend>
+            <div className="mt3">
+              <input
+                onChange={this.handleChange}
+                className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                type="text"
+                placeholder="ticker"
+                name="ticker"
+                id="ticker"
+                value={ticker}
               />
             </div>
-          </main>
-        </article>
-      </div>
+            <div className="mt3">
+              <input
+                onChange={this.handleChange}
+                className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                type="quantity"
+                placeholder="Qty"
+                name="quantity"
+                id="email-address"
+                value={quantity}
+              />
+            </div>
+          </fieldset>
+          <div className="">
+            <input
+              className="b br3 ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib center"
+              type="submit"
+              onClick={this.onOrderSubmit}
+              value="Buy"
+            />
+          </div>
+          <FormValidation
+            ticker={ticker}
+            quantity={quantity}
+            isOrdered={isOrdered}
+            notEnoughCash={notEnoughCash}
+            // id={id}
+            tickersList={tickersList}
+          />
+        </div>
+      </main>
     );
   }
 }

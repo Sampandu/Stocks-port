@@ -1,0 +1,47 @@
+/* tags */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: rgb(230, 230, 230)
+  /* background: linear-gradient(to left, rgb(18, 45, 117) 0%, rgba(0,128,128,1) 100%); */
+}
+
+h1 {
+  font-family: 'SEGA LOGO FONT';
+  font-weight: 200;
+  color: #0ccac4;
+}
+
+/* classes */
+.customizedLoader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid rgb(190, 178, 164);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+.vl {
+  border-left: 2px solid rgb(235, 232, 232);
+}
+
+.bc {
+  background: rgb(230, 230, 230)
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+@font-face {
+  font-family: 'SEGA LOGO FONT';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SEGA LOGO FONT'), url('SEGA.woff') format('woff');
+  }

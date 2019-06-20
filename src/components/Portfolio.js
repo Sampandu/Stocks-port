@@ -3,6 +3,8 @@ import Order from './Order';
 import Stocklist from './Stocklist';
 import Loading from './Loading';
 import ErrorBoundry from './ErrorBoundry';
+import { totalValue, currencyNumberFormat } from '../util';
+
 import { Dimmer, Segment } from 'semantic-ui-react';
 import axios from 'axios';
 
@@ -42,12 +44,20 @@ export default class Portfolio extends Component {
         <Loading isPending={isPending} />
 
         <article className="cf">
-          <div className="fl w-60 tc">
+          <legend className="w-60 pl5 f3 fw6 ml5">{`Welcome ${name}`}</legend>
+          {!portfolio.length ? (
+            <legend className="w-60 pl5 f3 fw6 ml5 mt4">{`Your portfolio is empty`}</legend>
+          ) : (
+            <legend className="w-60 pl5 f3 fw6 ml5 mt4">{`Portfolio (${currencyNumberFormat(
+              totalValue(portfolio)
+            )})`}</legend>
+          )}
+          <div className="fl w-60 center pl4 ml5 b--transparent">
             <ErrorBoundry>
               <Stocklist name={name} portfolio={portfolio} />
             </ErrorBoundry>
           </div>
-          <div className="fl w-40 tc">
+          <div className="fl w-40 tc vl b--transparent">
             <Order name={name} balance={balance} />
           </div>
         </article>

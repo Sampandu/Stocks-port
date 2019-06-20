@@ -35,15 +35,15 @@ class Transactions extends Component {
 
           <article className="center pa3 pa5-ns">
             {transaction.length === 0 ? (
-              <h1 className="tc">{`Your transaction history is empty`}</h1>
+              <legend className="f3 fw6 ph0 mh0 tc">{`Your transaction history is empty`}</legend>
             ) : (
               <div>
-                <h1 className="tc">Transactions</h1>
-                <ul className="list pl0 ml0 center mw6 ba b--light-silver br2">
+                <ul className="list pl0 measure center">
+                  <legend className="f3 fw6 ph0 mh0 tc">Transactions</legend>
                   {transaction.map(trx => (
                     <li
                       key={trx.id}
-                      className="ph3 pv3 bb b--light-silver"
+                      className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30"
                     >{`Buy (${trx.ticker}) - ${trx.quantity} Shares @ ${
                       trx.price
                     } `}</li>
