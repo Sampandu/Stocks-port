@@ -6,17 +6,14 @@ const Navigation = ({ isSignin, handleSignout }) => {
     return (
       <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Link to="/portfolio">
-          <p className="f3 pa3 link underline black dim pointer">Portfolio</p>
+          <p className="f3 pa3 link black dim pointer">Portfolio</p>
         </Link>
         <Link to="/transactions">
-          <p className="f3 pa3 link underline black dim pointer">Transaction</p>
+          <p className="f3 pa3 link black dim pointer">Transaction</p>
         </Link>
         <Link to="/">
-          <p
-            className="f3 pa3 link underline black dim pointer"
-            onClick={handleSignout}
-          >
-            Signout
+          <p className="f3 pa3 link black dim pointer" onClick={handleSignout}>
+            Sign Out
           </p>
         </Link>
       </nav>
@@ -25,10 +22,10 @@ const Navigation = ({ isSignin, handleSignout }) => {
     return (
       <nav style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Link to="/">
-          <p className="f3 pa3 link underline black dim pointer">Sign in</p>
+          <p className="f3 pa3 link black dim pointer">Sign in</p>
         </Link>
         <Link to="/register">
-          <p className="f3 pa3 link underline black dim pointer">Register</p>
+          <p className="f3 pa3 link black dim pointer">Register</p>
         </Link>
       </nav>
     );

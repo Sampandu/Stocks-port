@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Portfolio from './components/Portfolio';
 import Transactions from './components/Transactions';
 import Navigation from './components/Navigation';
+import Logo from './components/Logo/Logo';
 import Footer from './components/Footer';
 
 import './App.css';
@@ -47,6 +48,7 @@ class App extends Component {
           isSignin={this.state.isSignin}
           handleSignout={this.handleSignout}
         />
+        <Logo />
         <Switch>
           <Route
             exact

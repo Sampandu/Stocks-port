@@ -32,7 +32,7 @@ class Register extends Component {
         Object.keys(result).length === 0 &&
           this.setState({ invalidEmail: true });
         if (result.id) {
-          this.props.loadUser(result.data);
+          this.props.loadUser(result);
           this.props.history.push('/portfolio');
         }
       })
