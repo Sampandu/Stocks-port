@@ -3,6 +3,7 @@ import Order from './Order';
 import Stocklist from './Stocklist';
 import Loading from './Loading';
 import ErrorBoundry from './ErrorBoundry';
+import Scroll from './Scroll';
 import { totalValue, currencyNumberFormat } from '../util';
 
 import { Dimmer, Segment } from 'semantic-ui-react';
@@ -40,28 +41,30 @@ export default class Portfolio extends Component {
     const { portfolio, isPending } = this.state;
 
     return (
-      <Dimmer.Dimmable as={Segment} dimmed={isPending}>
-        <Loading isPending={isPending} />
+      <Scroll>
+        <Dimmer.Dimmable as={Segment} dimmed={isPending}>
+          <Loading isPending={isPending} />
 
-        <article className="cf">
-          <legend className="w-60 pl5 f3 fw6 ml5">{`Welcome ${name}`}</legend>
-          {!portfolio.length ? (
-            <legend className="w-60 pl5 f3 fw6 ml5 mt4">{`Your portfolio is empty`}</legend>
-          ) : (
-            <legend className="w-60 pl5 f3 fw6 ml5 mt4">{`Portfolio (${currencyNumberFormat(
-              totalValue(portfolio)
-            )})`}</legend>
-          )}
-          <div className="fl w-60 center pl4 ml5 b--transparent">
-            <ErrorBoundry>
-              <Stocklist name={name} portfolio={portfolio} />
-            </ErrorBoundry>
-          </div>
-          <div className="fl w-40 tc vl b--transparent">
-            <Order name={name} balance={balance} />
-          </div>
-        </article>
-      </Dimmer.Dimmable>
+          <article className="cf">
+            <legend className="w-60 pl5 f3 fw6 ml5">{`Welcome ${name}`}</legend>
+            {!portfolio.length ? (
+              <legend className="w-60 pl5 f3 fw6 ml5 mt4">{`Your portfolio is empty`}</legend>
+            ) : (
+              <legend className="w-60 pl5 f3 fw6 ml5 mt4">{`Portfolio (${currencyNumberFormat(
+                totalValue(portfolio)
+              )})`}</legend>
+            )}
+            <div className="fl w-60 center pl4 ml5">
+              <ErrorBoundry>
+                <Stocklist name={name} portfolio={portfolio} />
+              </ErrorBoundry>
+            </div>
+            <div className="fl w-40 tc vl">
+              <Order name={name} balance={balance} />
+            </div>
+          </article>
+        </Dimmer.Dimmable>
+      </Scroll>
     );
   }
 }

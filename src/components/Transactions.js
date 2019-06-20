@@ -33,7 +33,7 @@ class Transactions extends Component {
         <Dimmer.Dimmable as={Segment} dimmed={isPending}>
           <Loading isPending={isPending} />
 
-          <article className="center pa3 pa5-ns">
+          <article className="center pa2 pa2-ns">
             {transaction.length === 0 ? (
               <legend className="f3 fw6 ph0 mh0 tc">{`Your transaction history is empty`}</legend>
             ) : (
