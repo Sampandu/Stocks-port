@@ -16,7 +16,7 @@ const FormValidation = ({
     <div>
       {/* validation of order form */}
       {notEnoughCash && (
-        <div className="flex items-center justify-center ma3 pa3 bg-lightest-blue navy">
+        <div className="flex items-center justify-center br3 ma3 pa3 bg-lightest-blue navy">
           <svg
             className="w1"
             data-icon="info"
@@ -30,7 +30,7 @@ const FormValidation = ({
         </div>
       )}
       {!Number.isInteger(quantity) && (
-        <div className="flex items-center justify-center ma3 pa3 bg-light-red navy">
+        <div className="flex items-center justify-center br3 ma3 pa3 bg-light-red navy">
           <svg
             className="w1"
             data-icon="info"
@@ -44,7 +44,7 @@ const FormValidation = ({
         </div>
       )}
       {ticker.length !== 0 && !tickersList.includes(ticker) && (
-        <div className="flex items-center justify-center ma3 pa3 bg-light-red navy">
+        <div className="flex items-center justify-center br3 ma3 pa3 bg-light-red navy">
           <svg
             className="w1"
             data-icon="info"
@@ -58,7 +58,7 @@ const FormValidation = ({
         </div>
       )}
       {isOrdered && (
-        <div className="flex items-center justify-center ma3 pa3 bg-lightest-blue navy">
+        <div className="flex items-center justify-center br3 ma3 pa3 bg-lightest-blue navy">
           <svg
             className="w1"
             data-icon="info"
@@ -74,7 +74,7 @@ const FormValidation = ({
 
       {/* validation of email in register form */}
       {invalidEmail && (
-        <div className="flex items-center justify-center ma3 pa3 bg-light-red navy">
+        <div className="flex items-center justify-center br3 ma3 pa3 bg-light-red navy">
           <svg
             className="w1"
             data-icon="info"

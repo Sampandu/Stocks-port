@@ -62,6 +62,7 @@ class Order extends Component {
       balance,
       tickersList,
     } = this.state;
+    const buttonDisabled = ticker.length === 0 || quantity <= 0 ? true : false;
 
     return (
       <main className="pa4 black-80 center">
@@ -95,10 +96,11 @@ class Order extends Component {
           </fieldset>
           <div className="">
             <input
-              className="b br3 ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib center"
+              className="b br3 ph3 pv2 input-reset ba bg-moon-gray grow pointer f6 dib center"
               type="submit"
               onClick={this.onOrderSubmit}
               value="Buy"
+              disabled={buttonDisabled}
             />
           </div>
           <FormValidation
@@ -106,7 +108,6 @@ class Order extends Component {
             quantity={quantity}
             isOrdered={isOrdered}
             notEnoughCash={notEnoughCash}
-            // id={id}
             tickersList={tickersList}
           />
         </div>
