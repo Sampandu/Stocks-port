@@ -23,7 +23,7 @@ The app runs on a Node/Express server and is powered by React on the front end. 
 ## To run this locally:
 
 1. Go to https://github.com/Sampandu/TTP-FS-server and follow the instructions in the readme to run the server locally.
-2. Clone this repo (TTP_FS)
+2. Clone this repo (TTP-FS)
 3. npm install
 4. npm run start-dev
 
