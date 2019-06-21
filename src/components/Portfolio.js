@@ -18,6 +18,7 @@ export default class Portfolio extends Component {
   componentDidMount() {
     const name = this.props.name;
     this.setState({ isPending: true });
+    //dynamically update the portfolio
     this.updateFrequence = setInterval(() => this.fetchedPofolio(name), 1000);
   }
 
