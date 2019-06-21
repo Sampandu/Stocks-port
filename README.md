@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Stock Portfolio App
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+The app runs on a Node/Express server and is powered by React on the front end. It allows the user to buy a stock, view a list of transactions he/she has made and review the performance of a list of stocks whose prices continuously rise and fall throughout the day. It is deployed at https://xxx.herokuapp.com/.
 
-### `npm start`
+## Funtionalities/Features
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Allow the user to create a account with an email that can only register once.
+2. Allow the user access his/her account via email and password.
+3. Allow the user to buy shares of stock at its current price.
+4. Allow the user to view a list of all transactions he/she has made to date.
+5. Allow the user to view a list of stocks along with their current values.
+   1. Red color of stock symbols indicates the current price is less than the day's open price.
+   2. Grey color of stock symbols indicates the current price is less than the day's open price.
+   3. Green color of stock symbols indicates the current price is less than the day's open price.
+6. Proper error handling: form validations and data cleanup have been done in order to succesfully save data, fetch data and render components.
+7. DRY code:
+   1. Utility functions for data manipulation, data fetching.
+   2. Use modularized structure: create "Stocklist" component to render a list of stocks and indicate performance dynamically, create "Loading" screen when fetching a list of stocks and transactions.
+8. Readability: write documentation and comments to increase code readability and maintainability.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## To run this locally:
 
-### `npm test`
+1. Go to https://github.com/Sampandu/TTP-FS-server and follow the instructions in the readme to run the server locally.
+2. Clone this repo (TTP_FS)
+3. npm install
+4. npm run start-dev
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## To run tests:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. npm test
