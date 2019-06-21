@@ -1,0 +1,494 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expects to render Stocklist component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Stocklist
+    portfolio={
+      Array [
+        Object {
+          "id": 1,
+          "latest": 210,
+          "open": 200,
+          "ticker": "aapl",
+        },
+        Object {
+          "id": 2,
+          "latest": null,
+          "open": 1050,
+          "ticker": "googl",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <ul
+        className="list pl0 measure center"
+      >
+        <li
+          className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30"
+        >
+          <strong
+            style={
+              Object {
+                "color": "green",
+              }
+            }
+          >
+            aapl
+          </strong>
+           @ undefined Shares
+          <label
+            className="tr"
+          >
+            NaN
+          </label>
+        </li>
+        <li
+          className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30"
+        >
+          <strong
+            style={
+              Object {
+                "color": "red",
+              }
+            }
+          >
+            googl
+          </strong>
+           @ undefined Shares
+          <label
+            className="tr"
+          >
+            
+          </label>
+        </li>
+      </ul>,
+      "className": "pa3 pa2-ns",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <li
+            className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30"
+          >
+            <strong
+              style={
+                Object {
+                  "color": "green",
+                }
+              }
+            >
+              aapl
+            </strong>
+             @ undefined Shares
+            <label
+              className="tr"
+            >
+              NaN
+            </label>
+          </li>,
+          <li
+            className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30"
+          >
+            <strong
+              style={
+                Object {
+                  "color": "red",
+                }
+              }
+            >
+              googl
+            </strong>
+             @ undefined Shares
+            <label
+              className="tr"
+            >
+              
+            </label>
+          </li>,
+        ],
+        "className": "list pl0 measure center",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <strong
+                style={
+                  Object {
+                    "color": "green",
+                  }
+                }
+              >
+                aapl
+              </strong>,
+              " @ undefined Shares",
+              <label
+                className="tr"
+              >
+                NaN
+              </label>,
+            ],
+            "className": "lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "aapl",
+                "style": Object {
+                  "color": "green",
+                },
+              },
+              "ref": null,
+              "rendered": "aapl",
+              "type": "strong",
+            },
+            " @ undefined Shares",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "NaN",
+                "className": "tr",
+              },
+              "ref": null,
+              "rendered": "NaN",
+              "type": "label",
+            },
+          ],
+          "type": "li",
+        },
+        Object {
+          "instance": null,
+          "key": "2",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <strong
+                style={
+                  Object {
+                    "color": "red",
+                  }
+                }
+              >
+                googl
+              </strong>,
+              " @ undefined Shares",
+              <label
+                className="tr"
+              >
+                
+              </label>,
+            ],
+            "className": "lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "googl",
+                "style": Object {
+                  "color": "red",
+                },
+              },
+              "ref": null,
+              "rendered": "googl",
+              "type": "strong",
+            },
+            " @ undefined Shares",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+                "className": "tr",
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "label",
+            },
+          ],
+          "type": "li",
+        },
+      ],
+      "type": "ul",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <ul
+          className="list pl0 measure center"
+        >
+          <li
+            className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30"
+          >
+            <strong
+              style={
+                Object {
+                  "color": "green",
+                }
+              }
+            >
+              aapl
+            </strong>
+             @ undefined Shares
+            <label
+              className="tr"
+            >
+              NaN
+            </label>
+          </li>
+          <li
+            className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30"
+          >
+            <strong
+              style={
+                Object {
+                  "color": "red",
+                }
+              }
+            >
+              googl
+            </strong>
+             @ undefined Shares
+            <label
+              className="tr"
+            >
+              
+            </label>
+          </li>
+        </ul>,
+        "className": "pa3 pa2-ns",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li
+              className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30"
+            >
+              <strong
+                style={
+                  Object {
+                    "color": "green",
+                  }
+                }
+              >
+                aapl
+              </strong>
+               @ undefined Shares
+              <label
+                className="tr"
+              >
+                NaN
+              </label>
+            </li>,
+            <li
+              className="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30"
+            >
+              <strong
+                style={
+                  Object {
+                    "color": "red",
+                  }
+                }
+              >
+                googl
+              </strong>
+               @ undefined Shares
+              <label
+                className="tr"
+              >
+                
+              </label>
+            </li>,
+          ],
+          "className": "list pl0 measure center",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "1",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <strong
+                  style={
+                    Object {
+                      "color": "green",
+                    }
+                  }
+                >
+                  aapl
+                </strong>,
+                " @ undefined Shares",
+                <label
+                  className="tr"
+                >
+                  NaN
+                </label>,
+              ],
+              "className": "lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "aapl",
+                  "style": Object {
+                    "color": "green",
+                  },
+                },
+                "ref": null,
+                "rendered": "aapl",
+                "type": "strong",
+              },
+              " @ undefined Shares",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "NaN",
+                  "className": "tr",
+                },
+                "ref": null,
+                "rendered": "NaN",
+                "type": "label",
+              },
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "2",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <strong
+                  style={
+                    Object {
+                      "color": "red",
+                    }
+                  }
+                >
+                  googl
+                </strong>,
+                " @ undefined Shares",
+                <label
+                  className="tr"
+                >
+                  
+                </label>,
+              ],
+              "className": "lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "googl",
+                  "style": Object {
+                    "color": "red",
+                  },
+                },
+                "ref": null,
+                "rendered": "googl",
+                "type": "strong",
+              },
+              " @ undefined Shares",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "",
+                  "className": "tr",
+                },
+                "ref": null,
+                "rendered": "",
+                "type": "label",
+              },
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+}
+`;

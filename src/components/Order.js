@@ -89,7 +89,7 @@ class Order extends Component {
                 type="quantity"
                 placeholder="Qty"
                 name="quantity"
-                id="email-address"
+                id="quantity"
                 value={quantity}
               />
             </div>

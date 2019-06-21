@@ -1,0 +1,675 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expects to render Order component 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Order
+    balance={5000}
+    name="Bill"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="measure"
+      >
+        <fieldset
+          className="ba b--transparent ph0 mh0"
+          id="sign_up"
+        >
+          <legend
+            className="f3 fw6 ph0 mh0 center"
+          >
+            Cash - $0.00
+          </legend>
+          <div
+            className="mt3"
+          >
+            <input
+              className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+              id="ticker"
+              name="ticker"
+              onChange={[Function]}
+              placeholder="ticker"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="mt3"
+          >
+            <input
+              className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+              id="quantity"
+              name="quantity"
+              onChange={[Function]}
+              placeholder="Qty"
+              type="quantity"
+              value=""
+            />
+          </div>
+        </fieldset>
+        <div
+          className=""
+        >
+          <input
+            className="b br3 ph3 pv2 input-reset ba bg-moon-gray grow pointer f6 dib center"
+            disabled={true}
+            onClick={[Function]}
+            type="submit"
+            value="Buy"
+          />
+        </div>
+        <FormValidation
+          isOrdered={false}
+          notEnoughCash={false}
+          quantity=""
+          ticker=""
+          tickersList={Array []}
+        />
+      </div>,
+      "className": "pa4 black-80 center",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <fieldset
+            className="ba b--transparent ph0 mh0"
+            id="sign_up"
+          >
+            <legend
+              className="f3 fw6 ph0 mh0 center"
+            >
+              Cash - $0.00
+            </legend>
+            <div
+              className="mt3"
+            >
+              <input
+                className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                id="ticker"
+                name="ticker"
+                onChange={[Function]}
+                placeholder="ticker"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="mt3"
+            >
+              <input
+                className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                id="quantity"
+                name="quantity"
+                onChange={[Function]}
+                placeholder="Qty"
+                type="quantity"
+                value=""
+              />
+            </div>
+          </fieldset>,
+          <div
+            className=""
+          >
+            <input
+              className="b br3 ph3 pv2 input-reset ba bg-moon-gray grow pointer f6 dib center"
+              disabled={true}
+              onClick={[Function]}
+              type="submit"
+              value="Buy"
+            />
+          </div>,
+          <FormValidation
+            isOrdered={false}
+            notEnoughCash={false}
+            quantity=""
+            ticker=""
+            tickersList={Array []}
+          />,
+        ],
+        "className": "measure",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <legend
+                className="f3 fw6 ph0 mh0 center"
+              >
+                Cash - $0.00
+              </legend>,
+              <div
+                className="mt3"
+              >
+                <input
+                  className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  id="ticker"
+                  name="ticker"
+                  onChange={[Function]}
+                  placeholder="ticker"
+                  type="text"
+                  value=""
+                />
+              </div>,
+              <div
+                className="mt3"
+              >
+                <input
+                  className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  id="quantity"
+                  name="quantity"
+                  onChange={[Function]}
+                  placeholder="Qty"
+                  type="quantity"
+                  value=""
+                />
+              </div>,
+            ],
+            "className": "ba b--transparent ph0 mh0",
+            "id": "sign_up",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Cash - $0.00",
+                "className": "f3 fw6 ph0 mh0 center",
+              },
+              "ref": null,
+              "rendered": "Cash - $0.00",
+              "type": "legend",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <input
+                  className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  id="ticker"
+                  name="ticker"
+                  onChange={[Function]}
+                  placeholder="ticker"
+                  type="text"
+                  value=""
+                />,
+                "className": "mt3",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100",
+                  "id": "ticker",
+                  "name": "ticker",
+                  "onChange": [Function],
+                  "placeholder": "ticker",
+                  "type": "text",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <input
+                  className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  id="quantity"
+                  name="quantity"
+                  onChange={[Function]}
+                  placeholder="Qty"
+                  type="quantity"
+                  value=""
+                />,
+                "className": "mt3",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100",
+                  "id": "quantity",
+                  "name": "quantity",
+                  "onChange": [Function],
+                  "placeholder": "Qty",
+                  "type": "quantity",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "fieldset",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <input
+              className="b br3 ph3 pv2 input-reset ba bg-moon-gray grow pointer f6 dib center"
+              disabled={true}
+              onClick={[Function]}
+              type="submit"
+              value="Buy"
+            />,
+            "className": "",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "b br3 ph3 pv2 input-reset ba bg-moon-gray grow pointer f6 dib center",
+              "disabled": true,
+              "onClick": [Function],
+              "type": "submit",
+              "value": "Buy",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "isOrdered": false,
+            "notEnoughCash": false,
+            "quantity": "",
+            "ticker": "",
+            "tickersList": Array [],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+    "type": "main",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="measure"
+        >
+          <fieldset
+            className="ba b--transparent ph0 mh0"
+            id="sign_up"
+          >
+            <legend
+              className="f3 fw6 ph0 mh0 center"
+            >
+              Cash - $0.00
+            </legend>
+            <div
+              className="mt3"
+            >
+              <input
+                className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                id="ticker"
+                name="ticker"
+                onChange={[Function]}
+                placeholder="ticker"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              className="mt3"
+            >
+              <input
+                className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                id="quantity"
+                name="quantity"
+                onChange={[Function]}
+                placeholder="Qty"
+                type="quantity"
+                value=""
+              />
+            </div>
+          </fieldset>
+          <div
+            className=""
+          >
+            <input
+              className="b br3 ph3 pv2 input-reset ba bg-moon-gray grow pointer f6 dib center"
+              disabled={true}
+              onClick={[Function]}
+              type="submit"
+              value="Buy"
+            />
+          </div>
+          <FormValidation
+            isOrdered={false}
+            notEnoughCash={false}
+            quantity=""
+            ticker=""
+            tickersList={Array []}
+          />
+        </div>,
+        "className": "pa4 black-80 center",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <fieldset
+              className="ba b--transparent ph0 mh0"
+              id="sign_up"
+            >
+              <legend
+                className="f3 fw6 ph0 mh0 center"
+              >
+                Cash - $0.00
+              </legend>
+              <div
+                className="mt3"
+              >
+                <input
+                  className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  id="ticker"
+                  name="ticker"
+                  onChange={[Function]}
+                  placeholder="ticker"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                className="mt3"
+              >
+                <input
+                  className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                  id="quantity"
+                  name="quantity"
+                  onChange={[Function]}
+                  placeholder="Qty"
+                  type="quantity"
+                  value=""
+                />
+              </div>
+            </fieldset>,
+            <div
+              className=""
+            >
+              <input
+                className="b br3 ph3 pv2 input-reset ba bg-moon-gray grow pointer f6 dib center"
+                disabled={true}
+                onClick={[Function]}
+                type="submit"
+                value="Buy"
+              />
+            </div>,
+            <FormValidation
+              isOrdered={false}
+              notEnoughCash={false}
+              quantity=""
+              ticker=""
+              tickersList={Array []}
+            />,
+          ],
+          "className": "measure",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <legend
+                  className="f3 fw6 ph0 mh0 center"
+                >
+                  Cash - $0.00
+                </legend>,
+                <div
+                  className="mt3"
+                >
+                  <input
+                    className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                    id="ticker"
+                    name="ticker"
+                    onChange={[Function]}
+                    placeholder="ticker"
+                    type="text"
+                    value=""
+                  />
+                </div>,
+                <div
+                  className="mt3"
+                >
+                  <input
+                    className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                    id="quantity"
+                    name="quantity"
+                    onChange={[Function]}
+                    placeholder="Qty"
+                    type="quantity"
+                    value=""
+                  />
+                </div>,
+              ],
+              "className": "ba b--transparent ph0 mh0",
+              "id": "sign_up",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Cash - $0.00",
+                  "className": "f3 fw6 ph0 mh0 center",
+                },
+                "ref": null,
+                "rendered": "Cash - $0.00",
+                "type": "legend",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <input
+                    className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                    id="ticker"
+                    name="ticker"
+                    onChange={[Function]}
+                    placeholder="ticker"
+                    type="text"
+                    value=""
+                  />,
+                  "className": "mt3",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100",
+                    "id": "ticker",
+                    "name": "ticker",
+                    "onChange": [Function],
+                    "placeholder": "ticker",
+                    "type": "text",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <input
+                    className="br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+                    id="quantity"
+                    name="quantity"
+                    onChange={[Function]}
+                    placeholder="Qty"
+                    type="quantity"
+                    value=""
+                  />,
+                  "className": "mt3",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "className": "br3 pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100",
+                    "id": "quantity",
+                    "name": "quantity",
+                    "onChange": [Function],
+                    "placeholder": "Qty",
+                    "type": "quantity",
+                    "value": "",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "input",
+                },
+                "type": "div",
+              },
+            ],
+            "type": "fieldset",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <input
+                className="b br3 ph3 pv2 input-reset ba bg-moon-gray grow pointer f6 dib center"
+                disabled={true}
+                onClick={[Function]}
+                type="submit"
+                value="Buy"
+              />,
+              "className": "",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "b br3 ph3 pv2 input-reset ba bg-moon-gray grow pointer f6 dib center",
+                "disabled": true,
+                "onClick": [Function],
+                "type": "submit",
+                "value": "Buy",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "isOrdered": false,
+              "notEnoughCash": false,
+              "quantity": "",
+              "ticker": "",
+              "tickersList": Array [],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      "type": "main",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+    Symbol(enzyme.__providerValues__): undefined,
+  },
+  Symbol(enzyme.__providerValues__): Map {},
+  Symbol(enzyme.__childContext__): null,
+}
+`;

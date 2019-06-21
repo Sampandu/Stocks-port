@@ -1,7 +1,7 @@
 import React from 'react';
 import { currencyNumberFormat, colorIndicator } from '../util';
 
-export default function Stocklist({ name, portfolio }) {
+export default function Stocklist({ portfolio }) {
   return (
     <div className="pa3 pa2-ns">
       <ul className="list pl0 measure center">
