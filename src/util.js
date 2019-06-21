@@ -1,3 +1,4 @@
+//calculate the total value of a portfolio
 const totalValue = arr => {
   var result = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -13,6 +14,7 @@ const currencyNumberFormat = num => {
   }).format(Number(num));
 };
 
+//change the font color of a stock according to the latest price and open price
 const colorIndicator = (latest, open) => {
   if (latest === open) {
     return 'grey';

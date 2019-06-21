@@ -46,6 +46,7 @@ class Order extends Component {
 
   componentDidMount() {
     const balance = this.props.balance;
+    //get the full list of tickers supported by the third party API, and check if the user's ticker is valid.
     axios
       .get('http://localhost:3001/tickersList')
       .then(response => response.data)

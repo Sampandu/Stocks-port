@@ -20,9 +20,10 @@ class Signin extends Component {
         email: this.state.email,
         password: this.state.password,
       })
-      .then(response => {
-        if (response.data.id) {
-          this.props.loadUser(response.data);
+      .then(response => response.data)
+      .then(result => {
+        if (result.id) {
+          this.props.loadUser(result);
           this.props.history.push('/portfolio');
         }
       })
