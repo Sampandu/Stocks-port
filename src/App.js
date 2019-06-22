@@ -17,7 +17,6 @@ const initialState = {
     id: '',
     name: '',
     email: '',
-    balance: 0,
     join: '',
   },
 };
@@ -61,9 +60,7 @@ class App extends Component {
           />
           <Route
             path="/portfolio"
-            render={props => (
-              <Portfolio {...props} name={user.name} balance={user.balance} />
-            )}
+            render={props => <Portfolio {...props} name={user.name} />}
           />
           <Route
             path="/transactions"
