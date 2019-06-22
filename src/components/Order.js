@@ -12,6 +12,11 @@ class Order extends Component {
     balance: 0,
     tickersList: [],
   };
+  _isMounted = false;
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return this.state !== nextState;
+  }
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -46,6 +51,7 @@ class Order extends Component {
 
   componentDidMount() {
     const name = this.props.name;
+    this._isMounted = true;
     //get the full list of tickers supported by the third party API, and check if the user's ticker is valid.
     const getTickersList = () => {
       return axios
@@ -63,11 +69,17 @@ class Order extends Component {
     axios
       .all([getTickersList(), getBalance()])
       .then(
-        axios.spread((tickersList, balance) =>
-          this.setState({ tickersList, balance })
-        )
+        axios.spread((tickersList, balance) => {
+          if (this._isMounted) {
+            this.setState({ tickersList, balance });
+          }
+        })
       )
       .catch(err => console.log(err));
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {

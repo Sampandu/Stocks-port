@@ -14,15 +14,18 @@ export default class Portfolio extends Component {
     portfolio: [],
     isPending: false,
   };
+  _isMounted = false;
 
   componentDidMount() {
     const name = this.props.name;
+    this._isMounted = true;
     this.setState({ isPending: true });
     //dynamically update the portfolio
     this.updateFrequence = setInterval(() => this.fetchedPofolio(name), 1000);
   }
 
   componentWillUnmount() {
+    this._isMounted = false;
     this.updateFrequence && clearInterval(this.updateFrequence);
     this.updateFrequence = false;
   }
@@ -32,10 +35,14 @@ export default class Portfolio extends Component {
       .get(`http://localhost:3001/portfolio?name=${name}`)
       .then(response => response.data)
       .then(data => {
-        data.length > 0 && this.setState({ portfolio: data });
-        this.setState({ isPending: false });
+        if (this._isMounted) {
+          data.length > 0 && this.setState({ portfolio: data });
+          this.setState({ isPending: false });
+        }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        throw err;
+      });
   }
 
   render() {
