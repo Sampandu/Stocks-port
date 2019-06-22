@@ -39,7 +39,7 @@ export default class Portfolio extends Component {
   }
 
   render() {
-    const { name, balance } = this.props;
+    const { name } = this.props;
     const { portfolio, isPending } = this.state;
 
     return (
@@ -62,7 +62,7 @@ export default class Portfolio extends Component {
               </ErrorBoundry>
             </div>
             <div className="fl w-40 tc vl">
-              <Order name={name} balance={balance} />
+              <Order name={name} />
             </div>
           </article>
         </Dimmer.Dimmable>

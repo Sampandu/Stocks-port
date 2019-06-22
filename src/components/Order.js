@@ -45,12 +45,28 @@ class Order extends Component {
   };
 
   componentDidMount() {
-    const balance = this.props.balance;
+    const name = this.props.name;
     //get the full list of tickers supported by the third party API, and check if the user's ticker is valid.
+    const getTickersList = () => {
+      return axios
+        .get('http://localhost:3001/tickersList')
+        .then(res => res.data);
+    };
+
+    //get the latest balance
+    const getBalance = () => {
+      return axios
+        .get(`http://localhost:3001/balance?name=${name}`)
+        .then(res => res.data);
+    };
+
     axios
-      .get('http://localhost:3001/tickersList')
-      .then(response => response.data)
-      .then(tickersList => this.setState({ tickersList, balance }))
+      .all([getTickersList(), getBalance()])
+      .then(
+        axios.spread((tickersList, balance) =>
+          this.setState({ tickersList, balance })
+        )
+      )
       .catch(err => console.log(err));
   }
 
