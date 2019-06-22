@@ -23,7 +23,8 @@ export default class Portfolio extends Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.updateFrequence);
+    this.updateFrequence && clearInterval(this.updateFrequence);
+    this.updateFrequence = false;
   }
 
   fetchedPofolio(name) {
