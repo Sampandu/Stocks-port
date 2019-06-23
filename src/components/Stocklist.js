@@ -17,7 +17,7 @@ export default function Stocklist({ portfolio }) {
             >
               {trx.ticker}
             </strong>
-            {` @ ${trx.quantity} Shares`}
+            {` @ ${trx.quantity} Shares - Value `}
             <label className="tr">
               {trx.latest
                 ? currencyNumberFormat(trx.latest * Number(trx.quantity))
